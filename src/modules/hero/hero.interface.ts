@@ -3,4 +3,5 @@ export type IHero = {
   name: string;
   dentation: string;
   tags: string[];
+  heroImg?:string;
 };

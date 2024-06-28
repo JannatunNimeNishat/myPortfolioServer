@@ -5,7 +5,7 @@ const router = Router();
 
 const moduleRoutes = [
     {
-        path:'hero',
+        path:'/hero',
         route:HeroRoutes
     }
 ]
