@@ -9,8 +9,12 @@ const getHeroFromDB = async () => {
   const result = await Hero.find();
   return result;
 };
-
+const editHeroIntoDB = async (id: string, payload: Partial<IHero>) => {
+  const result = await Hero.findByIdAndUpdate(id, payload, { new: true });
+  return result;
+};
 export const HeroService = {
   createHeroIntoDB,
-  getHeroFromDB
+  getHeroFromDB,
+  editHeroIntoDB,
 };

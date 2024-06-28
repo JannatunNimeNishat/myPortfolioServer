@@ -31,9 +31,25 @@ const getHero = async(req:Request,res:Response)=>{
     }
 
 }
+const editHero = async(req:Request,res:Response)=>{
+    try {
+        const {id} = req.params;
+        const result = await HeroService.editHeroIntoDB(id,req.body);
+        res.json({
+            message:"Hero edited Successfully",
+            data:result
+        })
+    } catch (error) {
+        res.json({
+            message:'Something went wrong',
+            error:error
+        })
+    }
 
+}
 
 export const HeroController = {
     createHero,
     getHero,
+    editHero
 }
