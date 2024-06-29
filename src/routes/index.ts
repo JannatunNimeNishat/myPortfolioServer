@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { HeroRoutes } from "../modules/hero/hero.routes";
 import { AboutRoutes } from "../modules/about/about.routes";
+import { SkillRoutes } from "../modules/skill/skill.routes";
 
 const router = Router();
 
@@ -12,6 +13,10 @@ const moduleRoutes = [
     {
         path:'/about',
         route:AboutRoutes
+    },
+    {
+        path:'/skill',
+        route:SkillRoutes
     },
 ]
 
