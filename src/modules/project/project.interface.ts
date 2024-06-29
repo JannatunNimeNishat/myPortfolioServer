@@ -9,8 +9,8 @@ export type IGitLink = {
 
 export type IProjectImg = {
   projectHero: string;
-  img1: string;
-  img2: string;
+  img1?: string;
+  img2?: string;
 };
 
 export type IProject = {
