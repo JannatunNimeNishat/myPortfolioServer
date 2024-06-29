@@ -7,9 +7,15 @@ export type IGitLink = {
   server: string;
 };
 
+export type IProjectImg = {
+  projectHero: string;
+  img1: string;
+  img2: string;
+};
+
 export type IProject = {
-  name: string;
   title: string;
+  projectImg: IProjectImg;
   desc: string;
   technologyUsed: string[];
   liveLink: ILiveLink;
