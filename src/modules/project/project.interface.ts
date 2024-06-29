@@ -1,10 +1,10 @@
 export type ILiveLink = {
-  client: string;
-  server: string;
+  client?: string;
+  server?: string;
 };
 export type IGitLink = {
-  client: string;
-  server: string;
+  client?: string;
+  server?: string;
 };
 
 export type IProjectImg = {
