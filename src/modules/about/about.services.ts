@@ -6,6 +6,11 @@ const createAboutIntoDB = async (payload: IAbout) => {
   return result;
 };
 
+const getAboutFromDB = async()=>{
+    const result = await About.find();
+    return result;
+}
 export const AboutServices = {
   createAboutIntoDB,
+  getAboutFromDB
 };
