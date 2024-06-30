@@ -8,4 +8,7 @@ const router = Router();
 router.post("/", auth(USER_ROLE.admin), SkillController.createSkill);
 router.get("/", auth(USER_ROLE.admin), SkillController.getSkill);
 router.put("/:id", auth(USER_ROLE.admin), SkillController.editSkill);
+router.delete("/:id", auth(USER_ROLE.admin), SkillController.deleteSkill);
+
+
 export const SkillRoutes = router;
