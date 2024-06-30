@@ -21,7 +21,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
       throw new Error("You have no access to this route.");
     }
 
-    const { role, email, iat } = decoded;
+    const { role, email } = decoded;
 
     if (email !== "admin@admin.com") {
       throw new Error("You have no access to this route.");
