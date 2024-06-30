@@ -16,8 +16,14 @@ const editAboutIntoDB = async (id: string, payload: Partial<IAbout>) => {
   return result;
 };
 
+const deleteAboutFromDB = async (id: string) => {
+  const result = await About.findByIdAndDelete(id);
+  return result;
+};
+
 export const AboutServices = {
   createAboutIntoDB,
   getAboutFromDB,
-  editAboutIntoDB
+  editAboutIntoDB,
+  deleteAboutFromDB
 };
