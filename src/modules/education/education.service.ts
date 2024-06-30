@@ -6,7 +6,12 @@ const createEducationIntoDB = async (payload: IEducation) => {
     return result;
   };
 
+  const getEducationFromDB = async () => {
+    const result = await Education.find();
+    return result;
+  };
 
   export const EducationServices = {
-   createEducationIntoDB
+   createEducationIntoDB,
+   getEducationFromDB
   };
