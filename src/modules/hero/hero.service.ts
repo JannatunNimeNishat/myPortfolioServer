@@ -13,8 +13,13 @@ const editHeroIntoDB = async (id: string, payload: Partial<IHero>) => {
   const result = await Hero.findByIdAndUpdate(id, payload, { new: true });
   return result;
 };
+const deleteHeroFromDB = async (id: string) => {
+  const result = await Hero.findByIdAndDelete(id);
+  return result;
+};
 export const HeroService = {
   createHeroIntoDB,
   getHeroFromDB,
   editHeroIntoDB,
+  deleteHeroFromDB
 };

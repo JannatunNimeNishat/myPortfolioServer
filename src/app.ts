@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import router from "./routes";
+import globalErrorhandler from "./middleware/globalErrorhandler";
 
 
 const app = express();
@@ -16,7 +17,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 
-
+app.use(globalErrorhandler);
 
 app.all("*", (req: Request, res: Response) => {
   res.json({
