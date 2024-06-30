@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ProjectServices } from "./project.services";
-import { EducationServices } from "../education/education.service";
+
 
 const createProject = async (req: Request, res: Response) => {
   try {
