@@ -7,5 +7,7 @@ const router = Router();
 
 router.post("/", auth(USER_ROLE.admin), EducationController.createEducation);
 router.get("/", auth(USER_ROLE.admin), EducationController.getEducation);
+router.put("/:id", auth(USER_ROLE.admin), EducationController.editEducation);
+router.delete("/:id", auth(USER_ROLE.admin), EducationController.deleteEducation);
 
 export const EducationRoutes = router;

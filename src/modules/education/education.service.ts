@@ -11,7 +11,21 @@ const createEducationIntoDB = async (payload: IEducation) => {
     return result;
   };
 
+  const editEducationIntoDB = async (id: string, payload: Partial<IEducation>) => {
+    const result = await Education.findByIdAndUpdate(id, payload, { new: true });
+    return result;
+  };
+
+
+  const deleteEducationIntoDB = async (id: string) => {
+    const result = await Education.findByIdAndDelete(id);
+    return result;
+  };
+  
+
   export const EducationServices = {
    createEducationIntoDB,
-   getEducationFromDB
+   getEducationFromDB,
+   editEducationIntoDB,
+   deleteEducationIntoDB
   };
