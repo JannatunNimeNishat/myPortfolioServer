@@ -16,9 +16,14 @@ const editProjectIntoDB = async (id: string, payload: Partial<IProject>) => {
   return result;
 };
 
+const deleteProjectFromDB = async (id: string) => {
+  const result = await Project.findByIdAndDelete(id);
+  return result;
+};
 
 export const ProjectServices = {
   createProjectIntoDB,
   getProjectFromDB,
-  editProjectIntoDB
+  editProjectIntoDB,
+  deleteProjectFromDB
 };
