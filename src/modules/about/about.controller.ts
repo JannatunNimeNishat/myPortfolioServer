@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import { AboutServices } from "./about.services";
 
 const createAbout = async (req: Request, res: Response) => {
-  const result = await AboutServices.createAboutIntoDB(req.body);
   try {
+    const result = await AboutServices.createAboutIntoDB(req.body);
     res.json({
       message: "About created Successfully",
       data: result,
@@ -17,8 +17,8 @@ const createAbout = async (req: Request, res: Response) => {
 };
 
 const getAbout = async (req: Request, res: Response) => {
-  const result = await AboutServices.getAboutFromDB();
   try {
+    const result = await AboutServices.getAboutFromDB();
     res.json({
       message: "about fetched Successfully",
       data: result,
@@ -32,9 +32,9 @@ const getAbout = async (req: Request, res: Response) => {
 };
 
 const editAbout = async (req: Request, res: Response) => {
-  const { id } = req.params;
-  const result = await AboutServices.editAboutIntoDB(id, req.body);
   try {
+    const { id } = req.params;
+    const result = await AboutServices.editAboutIntoDB(id, req.body);
     res.json({
       message: "About updated Successfully",
       data: result,
