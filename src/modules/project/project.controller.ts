@@ -29,8 +29,23 @@ const getProject = async (req: Request, res: Response) => {
     });
   }
 };
-
+const editProject = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const result = await ProjectServices.editProjectIntoDB(id, req.body);
+  try {
+    res.json({
+      message: "Project updated Successfully",
+      data: result,
+    });
+  } catch (error) {
+    res.json({
+      message: "Something went wrong",
+      error: error,
+    });
+  }
+};
 export const ProjectController = {
   createProject,
   getProject,
+  editProject,
 };

@@ -11,7 +11,14 @@ const getProjectFromDB = async () => {
   return result;
 };
 
+const editProjectIntoDB = async (id: string, payload: Partial<IProject>) => {
+  const result = await Project.findByIdAndUpdate(id, payload, { new: true });
+  return result;
+};
+
+
 export const ProjectServices = {
   createProjectIntoDB,
   getProjectFromDB,
+  editProjectIntoDB
 };

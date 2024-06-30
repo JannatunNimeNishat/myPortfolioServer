@@ -5,6 +5,7 @@ const router = Router();
 
 router.post("/", ProjectController.createProject);
 router.get("/", ProjectController.getProject);
+router.put("/:id", ProjectController.editProject);
 
 
 
