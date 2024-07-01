@@ -35,7 +35,7 @@ const editSkill = async (req: Request, res: Response) => {
     const { id } = req.params;
     const result = await SkillService.editSkillIntoDB(id, req.body);
     res.json({
-      message: "Skill created Successfully",
+      message: "Skill updated Successfully",
       data: result,
     });
   } catch (error) {
