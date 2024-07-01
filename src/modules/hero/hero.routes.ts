@@ -3,11 +3,11 @@ import { HeroController } from "./hero.controller";
 import { USER_ROLE } from "../../constants";
 import auth from "../../middleware/auth";
 
-const route = Router();
+const router = Router();
 
-route.post("/", auth(USER_ROLE.admin), HeroController.createHero);
-route.get("/",  auth(USER_ROLE.admin),HeroController.getHero);
-route.put("/:id", auth(USER_ROLE.admin), HeroController.editHero);
-route.delete("/:id", auth(USER_ROLE.admin), HeroController.deleteHero);
-
-export const HeroRoutes = route;
+router.post("/", auth(USER_ROLE.admin), HeroController.createHero);
+router.get("/",  auth(USER_ROLE.admin),HeroController.getHero);
+router.put("/:id", auth(USER_ROLE.admin), HeroController.editHero);
+router.delete("/:id", auth(USER_ROLE.admin), HeroController.deleteHero);
+router.put('/status/:id',auth(USER_ROLE.admin),HeroController.changeStatus);
+export const HeroRoutes = router;

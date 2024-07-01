@@ -8,6 +8,7 @@ const heroSchema = new Schema<IHero>(
     dentation: { type: String, required: true },
     tags: { type: [String], required: true },
     heroImg: { type: String, default: null },
+    status: { type: Boolean, default: false },
   },
   {
     timestamps: true,
