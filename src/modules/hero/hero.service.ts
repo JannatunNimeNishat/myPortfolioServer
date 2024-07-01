@@ -19,7 +19,6 @@ const deleteHeroFromDB = async (id: string) => {
 };
 
 const changeStatusIntoDB = async (id: string) => {
-  console.log('reached',id);
   // First, find the hero by id
   const hero = await Hero.findById(id);
 

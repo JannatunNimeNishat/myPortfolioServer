@@ -7,6 +7,7 @@ import { TUserRole } from "../constants";
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const token = req.headers.authorization;
+
     if (!token) {
       throw new Error("You have no access to this route.");
     }
@@ -18,16 +19,16 @@ const auth = (...requiredRoles: TUserRole[]) => {
         config.jwt_access_secret as string
       ) as JwtPayload;
     } catch (error) {
-      console.log("decoded", decoded);
-      console.log("error", error);
       throw new Error("You have no access to this route.");
     }
+
     const { role, email } = decoded;
+
     if (email !== "admin@admin.com") {
       throw new Error("You have no access to this route.");
     }
 
-     if (requiredRoles && !requiredRoles.includes(role)) {
+    if (requiredRoles && !requiredRoles.includes(role)) {
       throw new Error("You have no access to this route.");
     }
     //  req.user = decoded as JwtPayload;

@@ -63,9 +63,26 @@ const deleteAbout = async (req: Request, res: Response) => {
   }
 };
 
+const changeStatus = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const result = await AboutServices.changeStatusIntoDB(id);
+    res.json({
+      message: "Status Changed Successfully",
+      data: result,
+    });
+  } catch (error) {
+    res.json({
+      message: "Something went wrong",
+      error: error,
+    });
+  }
+};
+
 export const AboutController = {
   createAbout,
   getAbout,
   editAbout,
-  deleteAbout
+  deleteAbout,
+  changeStatus
 };
