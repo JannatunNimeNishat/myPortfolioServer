@@ -6,7 +6,7 @@ import auth from "../../middleware/auth";
 const router = Router();
 
 router.post("/", auth(USER_ROLE.admin), ProjectController.createProject);
-router.get("/",  auth(USER_ROLE.admin),ProjectController.getProject);
+router.get("/",  ProjectController.getProject);
 router.put("/:id", auth(USER_ROLE.admin), ProjectController.editProject);
 router.delete("/:id", auth(USER_ROLE.admin), ProjectController.deleteProject);
 
