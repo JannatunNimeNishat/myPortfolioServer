@@ -5,6 +5,7 @@ import { SkillRoutes } from "../modules/skill/skill.routes";
 import { ProjectRoutes } from "../modules/project/project.routers";
 import { EducationRoutes } from "../modules/education/education.routes";
 import { AuthRoutes } from "../modules/auth/auth.routes";
+import { ExperienceRoutes } from "../modules/experience/experience.routes";
 
 const router = Router();
 
@@ -28,6 +29,10 @@ const moduleRoutes = [
   {
     path: "/education",
     route: EducationRoutes,
+  },
+  {
+    path: "/experience",
+    route: ExperienceRoutes,
   },
   {
     path: "/auth",
