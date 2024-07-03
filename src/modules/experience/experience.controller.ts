@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
+import { ExperienceServices } from "./experience.services";
 
 const createExperience = async (req: Request, res: Response) => {
   try {
-    const result = await req.body;
+    const result = await ExperienceServices.createExperienceIntoDB(req.body);
     res.json({
       message: "Experience created Successfully",
       data: result,
