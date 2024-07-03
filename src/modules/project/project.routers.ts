@@ -7,6 +7,7 @@ const router = Router();
 
 router.post("/", auth(USER_ROLE.admin), ProjectController.createProject);
 router.get("/",  ProjectController.getProject);
+router.get("/:id",  ProjectController.getSingleProject);
 router.put("/:id", auth(USER_ROLE.admin), ProjectController.editProject);
 router.delete("/:id", auth(USER_ROLE.admin), ProjectController.deleteProject);
 

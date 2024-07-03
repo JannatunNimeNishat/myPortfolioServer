@@ -30,6 +30,21 @@ const getProject = async (req: Request, res: Response) => {
     });
   }
 };
+const getSingleProject = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const result = await ProjectServices.getSingleProjectFromDB(id);
+  try {
+    res.json({
+      message: "Project updated Successfully",
+      data: result,
+    });
+  } catch (error) {
+    res.json({
+      message: "Something went wrong",
+      error: error,
+    });
+  }
+};
 const editProject = async (req: Request, res: Response) => {
   const { id } = req.params;
   const result = await ProjectServices.editProjectIntoDB(id, req.body);
@@ -65,6 +80,7 @@ const deleteProject = async (req: Request, res: Response) => {
 export const ProjectController = {
   createProject,
   getProject,
+  getSingleProject,
   editProject,
   deleteProject
 };

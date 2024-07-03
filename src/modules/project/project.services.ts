@@ -10,6 +10,10 @@ const getProjectFromDB = async () => {
   const result = await Project.find();
   return result;
 };
+const getSingleProjectFromDB = async (id: string) => {
+  const result = await Project.findById(id);
+  return result;
+};
 
 const editProjectIntoDB = async (id: string, payload: Partial<IProject>) => {
   const result = await Project.findByIdAndUpdate(id, payload, { new: true });
@@ -24,6 +28,7 @@ const deleteProjectFromDB = async (id: string) => {
 export const ProjectServices = {
   createProjectIntoDB,
   getProjectFromDB,
+  getSingleProjectFromDB,
   editProjectIntoDB,
-  deleteProjectFromDB
+  deleteProjectFromDB,
 };
